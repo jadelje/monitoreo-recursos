@@ -1,0 +1,858 @@
+#codigo despues de esta liena
+global:
+  scrape_interval:     30s # El intervalo en el que se traeralas metricas
+  evaluation_interval: 30s # Evaluara las reglas cada 30 segundos, por defecto es cada minuto
+
+#rule_files:
+  #- "alerting_rules.yml"
+
+scrape_configs:
+
+  - job_name: 'Prometheus_master'
+    honor_labels: true
+   #metrics_path: '/federate'
+    params:
+      'match[]':
+        - '{__name__=~".+"}'
+    static_configs:
+
+
+      # ------------------------------------- #
+      # ========= SERVIDORES LINUX ===========#
+      # ------------------------------------- #
+      - targets: ['194.163.170.7:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Mayasoft'
+          cliente: 'Administrativo'
+          componente: 'Harmony'
+          host: '194.163.170.7'
+      # ------------------------------------- #
+      - targets: ['66.94.103.168:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Mayasoft'
+          cliente: 'Administrativo'
+          componente: 'svn'
+          host: '66.94.103.168'
+      # ------------------------------------- #
+      - targets: ['38.105.209.146:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Mayasoft'
+          cliente: 'Administrativo'
+          componente: 'ERP'
+          host: '38.105.209.146'
+      # ------------------------------------- #
+      
+      # ------------------------------------- #
+      # ===== SERVIDORES LINUX MONITOR =======#
+      # ------------------------------------- # 
+      - targets: ['209.145.52.181:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Centralapp'
+          componente: 'Https'
+          host: '209.145.52.181'
+      # ------------------------------------- #
+      - targets: ['154.38.188.22:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Alistamiento'
+          componente: 'Alls'
+          host: '209.145.52.181'
+      # ------------------------------------- #
+      - targets: ['164.68.98.212:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Respaldo'
+          componente: 'Clientes'
+          host: '164.68.98.212'
+      # ------------------------------------- #
+      - targets: ['144.126.152.2:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Respaldo'
+          componente: 'Graphhopper'
+          host: '144.126.152.2'
+      # ------------------------------------- #
+      - targets: ['154.38.178.130:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Develop'
+          componente: 'Http-CV'
+          host: '154.38.178.130'
+      # ------------------------------------- #
+      - targets: ['154.53.38.75:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'PortalDriver'
+          componente: 'front-back'
+          host: '154.53.38.75'
+      # ------------------------------------- #
+
+      - targets: ['82.197.66.13:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'TMB'
+          componente: 'DB'
+          host: '82.197.66.13'
+      # ------------------------------------- #
+      - targets: ['31.220.100.230:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'TMB'
+          componente: 'Alls'
+          host: '31.220.100.230'
+      # ------------------------------------- #
+      - targets: ['82.197.66.14:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'TMB'
+          componente: 'Http'
+          host: '82.197.66.14'
+      # ------------------------------------- #
+      - targets: ['161.97.76.87:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Matrase'
+          componente: 'Http'
+          host: '161.97.76.87'
+      # ------------------------------------- #
+      - targets: ['185.250.37.55:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Matrase'
+          componente: 'DB'
+          host: '185.250.37.55'
+      # ------------------------------------- #
+      - targets: ['193.203.15.4:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Matrase'
+          componente: 'Alls'
+          host: '193.203.15.4'
+      # ------------------------------------- #
+      - targets: ['31.220.101.43:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Ccm'
+          componente: 'Http'
+          host: '31.220.101.43'
+      # ------------------------------------- #
+      - targets: ['154.38.191.52:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Ccm'
+          componente: 'Alls'
+          host: '154.38.191.52'
+      # ------------------------------------- #
+      - targets: ['154.38.191.50:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Ccm'
+          componente: 'DB'
+          host: '154.38.191.50'
+      # ------------------------------------- #
+      - targets: ['154.38.181.193:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Ccm'
+          componente: 'Portal'
+          host: '154.38.181.193'
+      # ------------------------------------- #
+
+      - targets: ['154.53.45.175:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Ryr'
+          componente: 'Http'
+          host: '154.53.45.175'
+      # ------------------------------------- #
+      - targets: ['154.12.226.24:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Ryr'
+          componente: 'DB'
+          host: '154.12.226.24'
+      # ------------------------------------- #
+      - targets: ['154.12.229.40:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Ryr'
+          componente: 'Alls'
+          host: '154.12.229.40'
+      # ------------------------------------- #
+      - targets: ['84.46.243.193:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'ARTransportes'
+          componente: 'Http'
+          host: '84.46.243.193'
+      # ------------------------------------- #
+      - targets: ['82.197.64.32:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'ARTransportes'
+          componente: 'DB'
+          host: '82.197.64.32'
+      # ------------------------------------- #
+      - targets: ['62.171.187.25:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'ARTransportes'
+          componente: 'Alls'
+          host: '62.171.187.25'
+      # ------------------------------------- #
+      - targets: ['94.72.113.224:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Conaltra'
+          componente: 'App1'
+          host: '94.72.113.224'
+      # ------------------------------------- #
+      - targets: ['94.72.113.225:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Conaltra'
+          componente: 'App2'
+          host: '94.72.113.225'
+      # ------------------------------------- #
+      - targets: ['94.72.113.249:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Conaltra'
+          componente: 'Int1'
+          host: '94.72.113.249'
+      # ------------------------------------- #
+      - targets: ['94.72.113.227:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Conaltra'
+          componente: 'Int2'
+          host: '94.72.113.227'
+      # ------------------------------------- #
+      - targets: ['94.72.113.226:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Conaltra'
+          componente: 'Http'
+          host: '94.72.113.226'
+      # ------------------------------------- #
+      - targets: ['94.72.113.250:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Conaltra'
+          componente: 'DB'
+          host: '94.72.113.250'
+      # ------------------------------------- #
+      - targets: ['38.105.209.118:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Dccargo'
+          componente: 'Alls'
+          host: '38.105.209.118'
+      # ------------------------------------- #
+      - targets: ['154.38.185.12:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Dccargo'
+          componente: 'DB'
+          host: '154.38.185.12'
+      # ------------------------------------- #
+      - targets: ['154.38.184.244:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Dccargo'
+          componente: 'Http'
+          host: '154.38.184.244'
+      # ------------------------------------- #
+      - targets: ['154.38.184.242:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Dccargo'
+          componente: 'Portal'
+          host: '154.38.184.242'
+      # ------------------------------------- #
+      - targets: ['154.53.39.183:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Nalsani'
+          componente: 'Alls'
+          host: '154.53.39.183'
+      # ------------------------------------- #
+      - targets: ['154.53.49.78:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Nalsani'
+          componente: 'DB'
+          host: '154.53.49.78'
+      # ------------------------------------- #
+      - targets: ['89.117.72.101:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Nalsani'
+          componente: 'Http'
+          host: '89.117.72.101'
+      # ------------------------------------- #
+      - targets: ['62.146.226.240:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Globalistik'
+          componente: 'DB'
+          host: '62.146.226.240'
+      # ------------------------------------- #
+      - targets: ['62.146.226.239:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Globalistik'
+          componente: 'Http'
+          host: '62.146.226.239'
+      # ------------------------------------- #
+      - targets: ['62.146.226.241:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Globalistik'
+          componente: 'Alls'
+          host: '62.146.226.241'
+      # ------------------------------------- #
+      - targets: ['207.244.235.104:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Transquim'
+          componente: 'Http'
+          host: '207.244.235.104'
+      # ------------------------------------- #
+      - targets: ['207.244.234.98:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Transquim'
+          componente: 'DB'
+          host: '207.244.234.98'
+      # ------------------------------------- #
+      - targets: ['207.244.235.189:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Transquim'
+          componente: 'Alls'
+          host: '207.244.235.189'
+      # ------------------------------------- #
+      - targets: ['31.220.97.153:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Centralapp'
+          componente: 'Alls'
+          host: '31.220.97.153'
+      # ------------------------------------- #
+      - targets: ['89.116.29.20:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Respaldo'
+          componente: 'Nominatim-Graphhopper'
+          host: '89.116.29.20'
+      # ------------------------------------- #
+      - targets: ['143.198.20.159:9100']
+        labels:
+          proveedor: 'Digital Ocean'
+          proyecto: 'Monitor'
+          cliente: 'Piloto'
+          componente: 'http'
+          host: '143.198.20.159'
+      # ------------------------------------- #
+      - targets: ['157.245.119.203:9100']
+        labels:
+          proveedor: 'Digital Ocean'
+          proyecto: 'Monitor'
+          cliente: 'Piloto'
+          componente: 'Alls'
+          host: '157.245.119.203'
+      # ------------------------------------- #
+
+
+      # ------------------------------------- #
+      # ==== SERVIDORES Automatización LINUX======#
+      # ------------------------------------- #
+      - targets: ['144.126.148.216:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Prodesa'
+          componente: 'Backend'
+          host: '144.126.148.216'
+      # ------------------------------------- #
+      - targets: ['207.244.247.160:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Mayasoft'
+          cliente: 'Desarrollo'
+          componente: 'QA-DEV'
+          host: '207.244.247.160'
+      # ------------------------------------- #
+      
+      - targets: ['209.126.10.94:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Cusezar'
+          componente: 'Backend'
+          host: '209.126.10.94'
+      # ------------------------------------- #
+      - targets: ['66.94.97.59:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Buenvivir'
+          componente: 'Backend'
+          host: '66.94.97.59'
+      # ------------------------------------- #
+      - targets: ['154.38.172.26:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'JaramilloM'
+          componente: 'Backend'
+          host: '154.38.172.26'
+      # ------------------------------------- #
+      - targets: ['207.244.226.139:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Capital'
+          componente: 'Backend'
+          host: '207.244.226.139'
+      # ------------------------------------- #
+      - targets: ['66.94.97.60:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Authorization'
+          componente: 'Portal-IPA'
+          host: '66.94.97.60'      
+      # ------------------------------------- #
+      - targets: ['207.244.252.166:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Alcabama'
+          componente: 'Backend'
+          host: '207.244.252.166'
+      # ------------------------------------- #
+      - targets: ['164.68.108.173:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Essperto'
+          componente: 'Clasif_doc_Ai'
+          host: '164.68.108.173'
+      # ------------------------------------- #
+      - targets: ['149.102.156.40:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Proyectos'
+          componente: 'Genericos'
+          host: '149.102.156.40'
+      # ------------------------------------- #
+      - targets: ['154.53.37.252:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Marval'
+          componente: 'Backend'
+          host: '154.53.37.252'
+      # ------------------------------------- #
+      - targets: ['144.126.149.106:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Copservir'
+          componente: 'FTP'
+          host: '144.126.149.106'
+      # ------------------------------------- #
+      - targets: ['66.94.127.57:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Essperto'
+          componente: 'Backend'
+          host: '66.94.127.57'
+      # ------------------------------------- #
+      - targets: ['144.126.139.106:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Mayasoft'
+          cliente: 'Esstampilla'
+          componente: 'Backend'
+          host: '144.126.139.106'
+      # ------------------------------------- #
+      - targets: ['144.126.142.228:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Logicem'
+          componente: 'Backend'
+          host: '144.126.142.228'
+      # ------------------------------------- #
+      - targets: ['144.126.140.146:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Happify'
+          componente: 'Backend'
+          host: '144.126.140.146'
+      # ------------------------------------- #
+      - targets: ['209.126.6.22:9100']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Monitor'
+          cliente: 'Conaltra'
+          componente: 'Int3'
+          host: '209.126.6.22'
+      # ------------------------------------- #
+      - targets: ['54.173.178.61:9100']
+        labels:
+          proveedor: 'AWS'
+          proyecto: 'Automatización'
+          cliente: 'Job-Talent'
+          componente: 'Backend-Frontend'
+          host: '54.173.178.61'
+      # ------------------------------------- #
+
+
+
+
+      # ------------------------------------- #
+      # ---- SERVIDORES WINDOWS SERVER -------#
+      # ------------------------------------- #
+      - targets: ['154.12.224.200:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Essperto-bot'
+          componente: 'Bot'
+          host: '154.12.224.200'
+      # ------------------------------------- #
+      - targets: ['66.94.97.65:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Bolivarbogota'
+          componente: 'Escrituracion'
+          host: '66.94.97.65'
+      # ------------------------------------- #
+      - targets: ['144.126.155.118:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Buenvivir'
+          componente: 'Promesas'
+          host: '144.126.155.118'
+      # ------------------------------------- #
+      - targets: ['66.94.102.20:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Marval'
+          componente: 'Promesas_compraventa'
+          host: '66.94.102.20'
+      # ------------------------------------- #
+      - targets: ['154.53.35.39:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Bolivarcali'
+          componente: 'Radicacion_creditos'
+          host: '154.53.35.39'
+      # ------------------------------------- #
+      - targets: ['154.53.37.253:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Capital'
+          componente: 'Promesas'
+          host: '154.53.37.253'
+      # ------------------------------------- #
+      - targets: ['154.12.236.180:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Bolivarbogota'
+          componente: 'Boleta_fiscal'
+          host: '154.12.236.180'
+      # ------------------------------------- #
+      - targets: ['66.94.114.239:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Marval'
+          componente: 'Cartas_credito'
+          host: '66.94.114.239'
+      # ------------------------------------- #
+      - targets: ['66.94.117.219:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Bolivarcali'
+          componente: 'promesas'
+          host: '66.94.117.219'
+      # ------------------------------------- #
+      - targets: ['154.53.39.181:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Bolivarcali'
+          componente: 'Subsidios'
+          host: '154.53.39.181'
+      # ------------------------------------- #
+      - targets: ['66.94.123.144:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Bolivarcali'
+          componente: 'Facturas_notarias'
+          host: '66.94.123.144'
+      # ------------------------------------- #
+      - targets: ['154.53.33.65:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Bolivar'
+          componente: 'Actas_entrega'
+          host: '154.53.33.65'
+      # ------------------------------------- #
+      - targets: ['209.145.57.32:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Prodesa'
+          componente: 'Boletas_fiscales'
+          host: '209.145.57.32'
+      # ------------------------------------- #
+      - targets: ['38.105.232.11:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Prodesa'
+          componente: 'Contratos_abastecimientos'
+          host: '38.105.232.11'
+      # ------------------------------------- #
+      - targets: ['66.94.102.148:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Prodesa'
+          componente: 'Promesas'
+          host: '66.94.102.148'
+      # ------------------------------------- #
+      - targets: ['109.123.254.9:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Prodesa'
+          componente: 'Pago_servicios'
+          host: '109.123.254.9'
+      # ------------------------------------- #
+      - targets: ['154.53.35.125:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Bolivarcali'
+          componente: 'Cartas_credito'
+          host: '154.53.35.125'
+      # ------------------------------------- #
+      - targets: ['66.94.127.109:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Prodesa'
+          componente: 'Auditoria_documentos'
+          host: '66.94.127.109'
+      # ------------------------------------- #
+      - targets: ['66.94.114.194:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Prodesa'
+          componente: 'Escrituracion'
+          host: '66.94.114.194'
+      # ------------------------------------- #
+      - targets: ['154.38.164.152:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Prodesa'
+          componente: 'Lectura ctls'
+          host: '154.38.164.152'
+      # ------------------------------------- #
+      - targets: ['5.182.33.51:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Prodesa'
+          componente: 'Radicacion'
+          host: '5.182.33.51'
+      # ------------------------------------- #
+      - targets: ['149.102.146.210:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Bolivar'
+          componente: 'Boletas_fiscales_ctls'
+          host: '149.102.146.210'
+      # ------------------------------------- #
+      - targets: ['184.174.39.63:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Marval'
+          componente: 'Aprobacion de Ventas'
+          host: '184.174.39.63'
+      # ------------------------------------- #
+      - targets: ['66.94.117.149:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Generico'
+          componente: 'Boletas_fiscales_Generico'
+          host: '66.94.117.149'
+      # ------------------------------------- #
+      - targets: ['149.102.155.21:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Alcabama'
+          componente: 'Promesas'
+          host: '149.102.155.21'
+      # ------------------------------------- #
+      - targets: ['154.38.162.227:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Cusezar'
+          componente: 'Escrituracion'
+          host: '154.38.162.227'
+      # ------------------------------------- #
+      - targets: ['84.46.247.140:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Jaramillo_Mora'
+          componente: 'Radicaciones'
+          host: '84.46.247.140'
+      # ------------------------------------- #
+      - targets: ['154.53.56.213:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Triada'
+          componente: 'Micasaya'
+          host: '154.53.56.213'
+      # ------------------------------------- #
+      - targets: ['89.117.150.175:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Marval'
+          componente: 'Contratos'
+          host: '89.117.150.175'
+      # ------------------------------------- #
+      - targets: ['31.220.96.119:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Marval'
+          componente: 'Micasaya'
+          host: '31.220.96.119'
+      # ------------------------------------- #
+      - targets: ['82.180.146.213:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Bolivarcali'
+          componente: 'Escrituracion'
+          host: '82.180.146.213'
+      # ------------------------------------- #
+      - targets: ['154.38.166.224:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Cusezar'
+          componente: 'Promesas'
+          host: '154.38.166.224'
+      # ------------------------------------- #
+      - targets: ['209.126.0.201:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Essperto-bot2'
+          componente: 'Bot2'
+          host: '209.126.0.201'
+      # ------------------------------------- #
+      - targets: ['154.53.45.7:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Prodesa'
+          componente: 'Auditoria'
+          host: '154.53.45.7'
+      # ------------------------------------- #
+      - targets: ['154.38.164.182:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Prodesa'
+          componente: 'Aprobacion_rechazo_facturas'
+          host: '154.38.164.182'
+      # ------------------------------------- #
+      - targets: ['158.220.86.35:9182']
+        labels:
+          proveedor: 'Contabo'
+          proyecto: 'Automatización'
+          cliente: 'Prodesa'
+          componente: 'Radicacion_facturas'
+          host: '158.220.86.35'
+      # ------------------------------------- #
+
